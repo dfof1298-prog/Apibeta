@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+curl-cffi
+aiohttp
+aiofiles
+pymongo
+psutil
+python-multipart
