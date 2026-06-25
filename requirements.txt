@@ -1,8 +1,9 @@
-fastapi
-uvicorn
-curl-cffi
-aiohttp
-aiofiles
-pymongo
-psutil
-python-multipart
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+curl-cffi==0.7.0
+aiohttp==3.10.0
+aiofiles==24.1.0
+pymongo==4.10.0
+psutil==6.1.0
+python-multipart==0.0.16
+requests==2.32.3
