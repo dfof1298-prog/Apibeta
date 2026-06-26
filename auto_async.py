@@ -75,7 +75,8 @@ class AsyncTLSClient:
     def __init__(self, timeout=12, proxy_url=None, impersonate=None, user_agent=None):
         self.timeout     = timeout
         self.proxy_url   = proxy_url
-        self.impersonate = impersonate or random.choice(BROWSER_PROFILES)
+        # 🔥 استخدم البروفايلات المدعومة فقط (بدون firefox133)
+        self.impersonate = impersonate or random.choice(["chrome124", "chrome120", "chrome116", "edge101", "safari15_5"])
         self.user_agent  = user_agent  or random.choice(USER_AGENTS)
         self._session: AsyncSession | None = None
 
@@ -856,7 +857,8 @@ async def run_checkout_for_card_async(shop_url: str, card_entry: str,
         return result
 
     email       = generate_random_email()
-    impersonate = random.choice(BROWSER_PROFILES)
+    # 🔥 استخدم فقط البروفايلات المدعومة
+    impersonate = random.choice(["chrome124", "chrome120", "chrome116", "edge101", "safari15_5"])
     user_agent  = random.choice(USER_AGENTS)
 
     client = AsyncTLSClient(timeout=12, proxy_url=proxy_url,
